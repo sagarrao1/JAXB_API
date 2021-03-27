@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
+	
+	
+	<jaxb:bindings schemaLocation="purchaseOrder.xsd">
+		<jaxb:schemaBindings>		
+		<!-- Specify the package name in the bindings file -->
+			<jaxb:package name="com.sagar.jaxb.domain" />		
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+	<jaxb:globalBindings>
+		<jaxb:javaType xmlType="xs:date"
+					   name="java.time.OffsetDateTime"
+					   parseMethod="parse"
+					   printMethod="toString" />			
+	</jaxb:globalBindings>
+	
+</jaxb:bindings>

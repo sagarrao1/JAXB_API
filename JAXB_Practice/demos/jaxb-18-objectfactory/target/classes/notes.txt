@@ -1,0 +1,8 @@
+schemagen commands from cmd
+
+C:\PracticeJava\JAXB_learning\JAXB_Practice\demos\jaxb-12-schemagen>mvn compile
+
+command for schemagen
+
+schemagen -cp target\classes -encoding UTF-8 com.sagar.jaxb.domain.PurchaseOrder
+

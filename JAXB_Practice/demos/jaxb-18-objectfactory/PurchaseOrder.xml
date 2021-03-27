@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrder xmlns="http://www.sagar.com/jaxb" orderDate="2021-03-24+05:30">
+    <items>
+        <item>
+            <productName>Ballpoint Pen</productName>
+            <quantity>20</quantity>
+            <price>8.95</price>
+            <comment>Blue ink</comment>
+        </item>
+        <item>
+            <productName>Pencil</productName>
+            <quantity>10</quantity>
+            <price>2.95</price>
+            <comment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </item>
+    </items>
+    <customer>
+        <name>John Doe</name>
+        <loyalty>GOLD</loyalty>
+        <shipToAddress>
+            <street>123 Main Street</street>
+            <city>Exampleville</city>
+            <postalCode>12345</postalCode>
+            <country>IN</country>
+        </shipToAddress>
+        <billToAddress>
+            <street>123 Main Street</street>
+            <city>Exampleville</city>
+            <postalCode>12345</postalCode>
+            <country>IN</country>
+        </billToAddress>
+    </customer>
+    <comment>Test</comment>
+</purchaseOrder>

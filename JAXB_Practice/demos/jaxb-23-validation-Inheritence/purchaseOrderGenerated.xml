@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrder xmlns="http://www.sagar.com/jaxb" orderDate="2021-03-26T10:08:29.578+05:30">
+    <items>
+        <item>
+            <productName>Pen</productName>
+            <quantity>4</quantity>
+            <price>23.2</price>
+            <comment>Blue ink</comment>
+        </item>
+        <item>
+            <productName>Pencil</productName>
+            <quantity>7</quantity>
+            <price>12.2</price>
+        </item>
+    </items>
+    <customer>
+        <name>Sagar</name>
+        <shippingAddress>
+            <street>Madeenaguda</street>
+            <city>Hyderabad</city>
+            <postalCode>500049</postalCode>
+            <country>India</country>
+        </shippingAddress>
+        <billingAddress>
+            <street>Madeenaguda</street>
+            <city>Hyderabad</city>
+            <postalCode>500049</postalCode>
+            <country>India</country>
+        </billingAddress>
+        <loyalty>GOLD</loyalty>
+    </customer>
+</purchaseOrder>

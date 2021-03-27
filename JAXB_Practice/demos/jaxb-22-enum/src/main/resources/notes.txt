@@ -1,0 +1,23 @@
+
+simple type base type as string , jaxb automatication converts as enum class
+
+
+<xs:simpleType name="loyalty">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BRONZE"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="GOLD"/>
+    </xs:restriction>
+ </xs:simpleType>
+
+
+if simple type is int and you want as enum in java  you need configuration
+in binding file
+
+
+
+when you define package in bindings.xjb file command is
+
+xjc -b bindings.xjb -d src/main/java -encoding UTF-8 purchaseOrder.xsd
+
+
