@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sagar.jaxb</groupId>
+	<artifactId>jaxb-31-maven-withDomainClassesExternalJar</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<description>using maven plugin for xjc to generate java clasess from
+		xsd</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.7.0</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+				<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId> 
+					<version>2.3.1</version> </plugin> -->
+			</plugins>
+		</pluginManagement>
+
+		<!-- <plugins> <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId> 
+			<executions> <execution> <goals> <goal>xjc</goal> </goals> </execution> </executions> 
+			<configuration> <sources> <source>src/main/resources/purchaseOrder.xsd</source> 
+			</sources> <xjbSources> <xjbSource>src/main/resources/bindings.xjb</xjbSource> 
+			</xjbSources> <packageName>com.sagar.jaxb.domain</packageName> </configuration> 
+			</plugin> </plugins> -->
+
+
+
+	</build>
+</project>

@@ -1,0 +1,21 @@
+ to deploy code we need java ee application server but for this simple example jax-ws provides
+ emdeded server which we can use to deploy basic examples
+ for we need to add main method to web service class and add
+ EndPOINT.publish method to publish web service
+ 
+ public static void main(String[] args) {
+	Endpoint.publish("http://localhost:8080/po", new PurchaseOrderWebService());
+	System.out.println("Running .......");
+}
+
+
+run the application by running PurchaseOrderWebService class 
+which has main method and go to web browser and open 
+http://localhost:8080/po?wsdl
+to see wsdl generated or not 
+server PurchaseOrderWebService should in running mode so that client can 
+access the web service operations below
+getOrders
+getOrder
+removeOrder
+addOrder

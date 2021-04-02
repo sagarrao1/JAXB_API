@@ -1,0 +1,118 @@
+tool used
+we use schemagen  to generate xsd from java classes.
+we use xjc to generate java classes from xsd
+
+
+
+2 approaches 
+
+1 code first and schema first apporach
+
+1. code first approach you hava java domain classes, you want to generate xsd
+you will use schemagen command from command prompt
+
+C:\PracticeJava\JAXB_learning\JAXB_Practice\demos\jaxb-12-schemagen>mvn compile
+
+command for schemagen
+
+schemagen -cp target\classes -encoding UTF-8 com.sagar.jaxb.domain.PurchaseOrder
+
+
+2.if you have xsd file , you want to generate java binding classes from xsd
+you use xjc command from cmd
+
+got directory where proejct is there
+
+xjc -d src/main/java -p com.sagar.jaxb.domain -encoding UTF-8 purchaseOrder.xsd
+
+to provide your own customization converting xsd to java classes, you create bindings.xjb file and provide 
+binding file while using xjc command, so that it creates java objects accordingly
+
+xjc -b bindings.xjb -d src/main/java -p com.sagar.jaxb.domain -encoding UTF-8 purchaseOrder.xsd
+
+
+
+
+simple type base type as string , jaxb automatication converts as enum class
+
+
+<xs:simpleType name="loyalty">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BRONZE"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="GOLD"/>
+    </xs:restriction>
+ </xs:simpleType>
+
+
+if simple type is int and you want as enum in java  you need configuration
+in binding file
+
+
+
+when you define package in bindings.xjb file command is
+
+xjc -b bindings.xjb -d src/main/java -encoding UTF-8 purchaseOrder.xsd
+
+
+
+
+we can validation schema at 2 places 1. when doing marshalling 2. unmarshalling
+we need to use SChemaFactory to schema to validate
+		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema schema = schemaFactory.newSchema(new File("purchaseOrder.xsd"));
+		
+		marshaller.setSchema(schema);
+We can also implement Eventhandler classs by implementing eventHandler interface so that we can continue to process even is there is any error
+and to provide custom exception 
+
+look MarshallExample and UnMarshall Example
+		
+		
+we can do validation when objects are in memory means we can do validation using withou  doing marshalling and unmarshalling using
+xml transaformation validation api 
+We can also implement Errorhandler classs by implementing ErrorHandler interface so that we can continue to process even is there is any error
+and to provide custom exception
+
+look for VlidationExample class
+=================================
+
+inheritence in xml
+in xml you can derive types from other types by restriction and extension
+
+
+1. inheritece by restriction
+
+<xs:simpleType name="loyalty">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BRONZE"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="GOLD"/>
+    </xs:restriction>
+ </xs:simpleType>
+
+2. inheritence by extension
+
+like super class and sub classes
+
+
+xjc -d src/main/java -p com.sagar.jaxb.domain.inheritence -encoding UTF-8 purchaseOrderInheritence.xsd
+
+======================
+xml any
+
+xjc -d src/main/java -p com.sagar.jaxb.domain -encoding UTF-8 purchaseOrder.xsd
+
+
+xml any -2 
+xjc -d src/main/java -p com.sagar.jaxb.domain.po -encoding UTF-8 purchaseOrder.xsd
+
+xjc -d src/main/java -p com.sagar.jaxb.domain.inv -encoding UTF-8 inventory.xsd
+
+
+
+
+
+		
+
+

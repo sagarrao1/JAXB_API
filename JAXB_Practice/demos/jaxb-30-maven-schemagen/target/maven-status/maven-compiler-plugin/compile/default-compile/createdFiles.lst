@@ -1,0 +1,7 @@
+com\sagar\jaxb\domain\Address.class
+com\sagar\jaxb\domain\Item.class
+com\sagar\jaxb\domain\Loyalty.class
+com\sagar\jaxb\domain\Country.class
+com\sagar\jaxb\domain\PurchaseOrder.class
+com\sagar\jaxb\domain\package-info.class
+com\sagar\jaxb\domain\Customer.class

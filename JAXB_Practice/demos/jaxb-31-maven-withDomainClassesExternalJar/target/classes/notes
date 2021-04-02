@@ -1,0 +1,83 @@
+
+we need to run maven build as
+clean package
+
+
+1.we have MarshalExample which required all domain classes 
+to be there in order to compile , we have purchaseOrder.xsd and bindings.xjb file
+
+
+3 ways we can do that get domain classes
+
+1. generate domain classes from xsd using eclipse 
+  go to .xsd file in resources > right click on file > generate java clasess
+  > provide bindings.xjb file location from resources > give domain path where you want to generate java clasess
+  in this case com.sagar.jaxb
+  
+  
+ then you MarshlExmple will compile automatically
+ 
+ 
+ 2. add maven - jaxb plugin in pom.xml
+  it will generate java domain classess using xjc 
+  
+  <build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.7.0</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+	<!-- 			<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jaxb2-maven-plugin</artifactId>
+					<version>2.3.1</version>
+				</plugin> -->
+			</plugins>
+		</pluginManagement>
+
+<!--         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sources>
+                        <source>src/main/resources/purchaseOrder.xsd</source>
+                    </sources>
+                    <xjbSources>
+                        <xjbSource>src/main/resources/bindings.xjb</xjbSource>
+                    </xjbSources>
+                    <packageName>com.sagar.jaxb.domain</packageName>
+                </configuration>
+            </plugin>
+        </plugins> -->
+        
+ 
+ 
+ run as mvn clean package , it will generate jar file , as wells as domain java classes 
+ MarshalExample will compile
+ 
+ 
+        
+3. if you already have java domain clasess jar file ,
+ if you add it to build path as external jar. MarshalExample will compile
+
+ 
+ 
+ 
+
+
+
+
