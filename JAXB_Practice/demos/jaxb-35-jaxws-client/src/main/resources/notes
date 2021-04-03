@@ -25,3 +25,10 @@ go to jaxb-34-jaxws-client and go cmd from there and run wsimport to create doma
 below is the command
 wsimport -s src\main\java -Xnocompile -keep -p com.sagar.jaxb.domain -encoding UTF-8 -verbose http://localhost:8080/po?wsdl
 
+
+
+
+we need to below setting in order to work practice jaxB on java 9 and above
+
+
+https://www.jesperdj.com/2018/09/30/jaxb-on-java-9-10-11-and-beyond/
