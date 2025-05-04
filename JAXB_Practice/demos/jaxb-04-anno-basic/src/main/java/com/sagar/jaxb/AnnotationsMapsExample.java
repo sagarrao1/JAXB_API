@@ -50,16 +50,6 @@ public class AnnotationsMapsExample {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	private static PurchaseOrderMap createPurchaseOrderMap() {
 		PurchaseOrderMap purchaseOrderMap = new PurchaseOrderMap();

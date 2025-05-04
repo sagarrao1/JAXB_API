@@ -13,11 +13,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.sagar.jaxb.adapters.ItemsAdapter;
 
+// comment @XmlJavaTypeAdapter and run Map class to see output initially
+
 @XmlRootElement
 public class PurchaseOrderMap {	
 	@XmlAttribute
 //	@XmlSchemaType(name = "date")
 	private Date orderDate;
+	
 	
 	@XmlJavaTypeAdapter(ItemsAdapter.class)
 	private Map<String, Item> items;

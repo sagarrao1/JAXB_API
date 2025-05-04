@@ -15,7 +15,7 @@ schemagen -cp target\classes -encoding UTF-8 com.sagar.jaxb.domain.PurchaseOrder
 2.if you have xsd file , you want to generate java binding classes from xsd
 you use xjc command from cmd
 
-got directory where proejct is there
+go to directory where proejct is there
 
 xjc -d src/main/java -p com.sagar.jaxb.domain -encoding UTF-8 purchaseOrder.xsd
 

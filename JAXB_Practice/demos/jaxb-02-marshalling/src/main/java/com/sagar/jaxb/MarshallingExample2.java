@@ -36,9 +36,8 @@ public class MarshallingExample2 {
 
 		QName rootElementName = new QName(null, "purchaseOrder");
 		JAXBElement<PurchaseOrder> rootElement = new JAXBElement<>(rootElementName, PurchaseOrder.class, purchaseOrder);
-		
-		
-		// User  StaX API to create XML document
+				
+		// Use  StaX API to create XML document
 		XMLStreamWriter writer = XMLOutputFactory.newInstance().createXMLStreamWriter(System.out);
 		
 		writer.writeStartDocument("UTF-8", "1.0");
@@ -52,19 +51,6 @@ public class MarshallingExample2 {
         writer.close();
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 	private static PurchaseOrder createPurchaseOrder() {

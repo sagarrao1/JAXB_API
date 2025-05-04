@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Example that shows how you can unmarshal an object from a DOM tree.
+ * Example that shows how you can unmarshal an object from a DOM tree in JaxB
  */
 public class UnmarshallingExample2 {
 

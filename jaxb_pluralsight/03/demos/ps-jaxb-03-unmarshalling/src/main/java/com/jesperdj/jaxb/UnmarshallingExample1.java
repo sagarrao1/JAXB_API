@@ -31,5 +31,6 @@ public class UnmarshallingExample1 {
         PurchaseOrder purchaseOrder = rootElement.getValue();
 
         System.out.println("Purchase order for: " + purchaseOrder.getCustomer().getName());
+        System.out.println("Purchase order for: " + purchaseOrder.getCustomer().getLoyalty());
     }
 }

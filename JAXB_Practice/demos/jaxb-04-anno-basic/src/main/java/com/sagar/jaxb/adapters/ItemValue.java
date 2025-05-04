@@ -1,5 +1,6 @@
 package com.sagar.jaxb.adapters;
 
+import java.lang.reflect.Constructor;
 import java.math.BigDecimal;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -12,7 +13,9 @@ public class ItemValue {
 
 	private String productCode;
 	private Item item;
-
+	
+//	Constructors
+	
 	public ItemValue(Item item) {
 		super();
 		this.item = item;

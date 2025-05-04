@@ -23,7 +23,7 @@
       <xs:element name="productName" type="xs:string"/>
       <xs:element name="quantity" type="xs:int"/>
       <xs:element name="price" type="xs:decimal"/>
-      <xs:element name="comment" type="xs:string" minOccurs="0"/>
+      <xs:element name="comment" type="xs:string" nillable="true" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 

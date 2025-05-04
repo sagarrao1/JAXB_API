@@ -33,7 +33,7 @@ public class MarshallingExample1 {
 		QName rootElementName = new QName(null, "purchaseOrder");
 		JAXBElement<PurchaseOrder> rootElement = new JAXBElement<>(rootElementName, PurchaseOrder.class, purchaseOrder);
 		
-		// Marshal and output to the console
+		// Use Marshal and output to the console
 		marshaller.marshal(rootElement, System.out);
 
 	}
