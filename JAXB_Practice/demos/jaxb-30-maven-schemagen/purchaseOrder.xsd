@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.sagar.com/jaxb" xmlns:tns="http://www.sagar.com/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="purchaseOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="items">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="item" type="tns:item" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="customer" type="tns:customer"/>
+        <xs:element name="comment" type="xs:string" nillable="true" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="orderDate" type="xs:date" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="item">
+    <xs:sequence>
+      <xs:element name="productName" type="xs:string"/>
+      <xs:element name="quantity" type="xs:int"/>
+      <xs:element name="price" type="xs:decimal"/>
+      <xs:element name="comment" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="loyalty" type="tns:loyalty" default="BRONZE" minOccurs="0"/>
+      <xs:element name="shipToAddress" type="tns:address"/>
+      <xs:element name="billToAddress" type="tns:address"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="address">
+    <xs:sequence>
+      <xs:element name="street" type="xs:string"/>
+      <xs:element name="city" type="xs:string"/>
+      <xs:element name="postalCode" type="xs:string"/>
+      <xs:element name="country" type="tns:country" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="country">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="loyalty">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BRONZE"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="GOLD"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
