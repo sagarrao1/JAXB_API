@@ -1,0 +1,12 @@
+
+Build tools plugin for schemagen and xjc for Maven and Gradle Build tools
+
+we use schemagen to generate XSD from java classes
+
+if you have xsd or shared by someone. to generate java domain classes . 
+we need to use xjc maven plugin 
+we use xjc to generate java classes from XSD
+
+maven plugin for jaxb for schemagen tool used to generate
+		xsd
+		from java classes and jar file
